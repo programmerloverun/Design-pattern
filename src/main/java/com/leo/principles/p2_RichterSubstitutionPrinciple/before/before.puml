@@ -1,0 +1,23 @@
+@startuml
+class Rectangle {
+  -double length
+  -double width
+  +double getLength()
+  +void setLength(double length)
+  +double getWidth()
+  +void setWidth(double width)
+}
+
+class Square {
+  +void setWidth(double width)
+  +void setLength(double length)
+}
+
+class RectangleDemo {
+  +static void resize(Rectangle rectangle)
+}
+
+Rectangle <|-- Square
+RectangleDemo ..> Rectangle : uses
+
+@enduml

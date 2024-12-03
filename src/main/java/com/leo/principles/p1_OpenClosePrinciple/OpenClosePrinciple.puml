@@ -1,0 +1,24 @@
+@startuml
+abstract class AbstractSkin {
+  +void display()
+}
+
+class DefaultSpecificSkin {
+  +void display()
+}
+
+class LeiSpecificSkin {
+  +void display()
+}
+
+class SouGouInput {
+  -AbstractSkin skin
+  +void setSkin(AbstractSkin skin)
+  +void display()
+}
+
+AbstractSkin <|-- DefaultSpecificSkin
+AbstractSkin <|-- LeiSpecificSkin
+SouGouInput --> AbstractSkin : skin
+
+@enduml

@@ -1,0 +1,33 @@
+@startuml
+interface Quadrilateral {
+  +double getLength()
+  +double getWidth()
+}
+
+class Rectangle {
+  -double length
+  -double width
+  +void setLength(double length)
+  +void setWidth(double width)
+  +double getLength()
+  +double getWidth()
+}
+
+class Square {
+  -double side
+  +double getSide()
+  +void setSide(double side)
+  +double getLength()
+  +double getWidth()
+}
+
+class RectangleDemo {
+  +static void printLengthAndWidth(Quadrilateral quadrilateral)
+  +static void resize(Rectangle rectangle)
+}
+
+Quadrilateral <|.. Rectangle : 实现
+Quadrilateral <|.. Square : 实现
+RectangleDemo -> Quadrilateral : 关联
+RectangleDemo -> Rectangle : 关联
+@enduml
